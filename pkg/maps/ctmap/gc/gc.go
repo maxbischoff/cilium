@@ -157,10 +157,11 @@ func Enable(ipv4, ipv6 bool, restoredEndpoints []*endpoint.Endpoint, mgr Endpoin
 func runGC(e *endpoint.Endpoint, ipv4, ipv6 bool, filter *ctmap.GCFilter) (mapType bpf.MapType, maxDeleteRatio float64) {
 	var maps []*ctmap.Map
 
+	// We don't need to check for LRU hashmap support to run the garbage collector.
 	if e == nil {
-		maps = ctmap.GlobalMaps(ipv4, ipv6)
+		maps = ctmap.GlobalMaps(ipv4, ipv6, true)
 	} else {
-		maps = ctmap.LocalMaps(e, ipv4, ipv6)
+		maps = ctmap.LocalMaps(e, ipv4, ipv6, true)
 	}
 	for _, m := range maps {
 		path, err := m.Path()
