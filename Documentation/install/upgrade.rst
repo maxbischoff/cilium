@@ -327,6 +327,10 @@ Deprecated options
   assets not being compiled into the cilium-agent binary anymore. The option is
   deprecated and will be removed in v1.9.
 
+* ``eni-parallel-workers``: This option in the Operator has been renamed to
+  ``parallel-alloc-workers``. The obsolete option name ``eni-parallel-workers``
+  has been deprecated and will be removed in v1.9.
+
 .. _1.7_upgrade_notes:
 
 1.7 Upgrade Notes
