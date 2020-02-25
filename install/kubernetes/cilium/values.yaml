@@ -279,7 +279,7 @@ global:
     # enabled enables go pprof debugging
     enabled: false
 
-  # logSytemLoad enables logging of system load 
+  # logSytemLoad enables logging of system load
   logSystemLoad: false
 
   # sockops is the BPF socket operations configuration
@@ -328,3 +328,7 @@ global:
 
   # remoteNodeIdentity enables use of the remote node identity
   remoteNodeIdentity: true
+
+  # psp creates and binds PodSecurityPolicies for the components that require it
+  psp:
+    enabled: false
